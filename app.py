@@ -8,9 +8,9 @@ from datetime import datetime
 import csv
 
 # Email konfiguracija
-EMAIL_USER = "djolepavlov12@gmail.com"        # tvoj email
-EMAIL_PASS = "iqezenibpdujrkei"   # lozinka ili App Password
-EMAIL_TO = "djolepavlov12@gmail.com"          # gde želiš da stižu rezervacije
+EMAIL_USER = "ja@gmail.com"        
+EMAIL_PASS = ""   
+EMAIL_TO = "ja@gmail.com"          
 
 # Funkcija za slanje email-a
 def posalji_email(ime, telefon, datum, vreme, sada):
@@ -74,3 +74,4 @@ def rezervacije():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
