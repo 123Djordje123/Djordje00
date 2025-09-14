@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezervacije - Kafić "Užitak"</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #fffaf0;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            color: #8b5e3c;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            max-width: 500px;
+            margin: auto;
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+        }
+        input, select, button {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+        button {
+            background-color: #8b5e3c;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #a66b47;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #8b5e3c;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Tabela rezervacija */
+        h2 {
+            text-align: center;
+            margin-top: 40px;
+            color: #8b5e3c;
+        }
+        .table-container {
+            overflow-x: auto; /* omogućava skrolovanje na telefonu */
+        }
+        table {
+            margin:auto;
+            border-collapse: collapse;
+            background:#fff3e0;
+            border-radius:10px;
+            overflow:hidden;
+            box-shadow:0 4px 8px rgba(0,0,0,0.1);
+            width:100%;
+            max-width:900px;
+            min-width: 500px;
+        }
+        th {
+            background:#8b5e3c;
+            color:white;
+            padding:8px;
+        }
+        td {
+            border:1px solid #ccc;
+            padding:8px;
+            text-align:center;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            form {
+                padding: 15px;
+            }
+            input, button {
+                font-size: 0.9em;
+            }
+            table {
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Rezervacije</h1>
+
+<!-- Forma za rezervacije -->
+<form action="/rezervacije" method="POST">
+    <input type="text" name="ime" placeholder="Vaše ime" required>
+    <input type="tel" name="telefon" placeholder="Broj telefona" required>
+    <input type="date" name="datum" required>
+    <input type="time" name="vreme" required>
+    <button type="submit">Rezerviši</button>
+</form>
+
+<!-- Lista prethodnih rezervacija -->
+{% if rezervacije %}
+<h2>Vaše rezervacije</h2>
+<div class="table-container">
+<table>
+    <tr>
+        <th>Datum kreiranja</th>
+        <th>Ime</th>
+        <th>Telefon</th>
+        <th>Datum rezervacije</th>
+        <th>Vreme</th>
+    </tr>
+    {% for r in rezervacije %}
+    <tr>
+        <td>{{ r[0] }}</td>
+        <td>{{ r[1] }}</td>
+        <td>{{ r[2] }}</td>
+        <td>{{ r[3] }}</td>
+        <td>{{ r[4] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endif %}
+
+<a href="/">Nazad na početnu</a>
+
+</body>
+</html>

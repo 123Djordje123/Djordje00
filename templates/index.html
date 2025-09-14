@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kafić "Užitak"</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fffaf0;
+        }
+
+        header {
+            background: url('https://images.unsplash.com/photo-1541542684-38d271f0f2d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2FmZXxlbnwwfHx8fDE2OTM4OTY1Mjk&ixlib=rb-4.0.3&q=80&w=1080')
+                        no-repeat center center/cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10px;
+        }
+
+        header h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        header p {
+            font-size: 1.5em;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #8b5e3c;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #a66b47;
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            color: #8b5e3c;
+            margin-bottom: 30px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-card {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .menu-card:hover { transform: translateY(-5px); }
+
+        .menu-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .gallery-card {
+            width: 100%;
+            max-width: 400px;
+            background: #fff3e0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-card p {
+            font-weight: bold;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .gallery-card:hover { transform: translateY(-5px); }
+
+        footer {
+            background-color: #8b5e3c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5em; }
+            header p { font-size: 1.1em; }
+            section h2 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Kafić "Užitak"</h1>
+    <p>Mesto gde uživanje počinje</p>
+</header>
+
+<nav>
+    <a href="#about">O nama</a>
+    <a href="#menu">Meni</a>
+    <a href="#gallery">Galerija</a>
+    <a href="#contact">Kontakt</a>
+    <a href="/rezervacije">Rezervacije</a>
+</nav>
+
+<section id="about">
+    <h2>O nama</h2>
+    <p>Dobrodošli u Kafić "Užitak"! Uživajte u našem ambijentu, vrhunskim pićima i prijatnoj atmosferi.</p>
+</section>
+
+<section id="menu">
+    <h2>Meni</h2>
+    <div class="menu-grid">
+        <div class="menu-card">
+            <img src="https://ddl.rs/wp-content/uploads/2018/05/coffeepexels-1.jpg" alt="Espreso">
+            <h3>Espreso</h3>
+            <p>200 RSD</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://www.thespruceeats.com/thmb/oUxhx54zsjVWfPlrgedJU0MZ-y0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-make-cappuccinos-766116-hero-01-a754d567739b4ee0b209305138ecb996.jpg" alt="Cappuccino">
+            <h3>Cappuccino</h3>
+            <p>250 RSD</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://static01.nyt.com/images/2022/06/27/dining/kc-mushroom-beef-burgers/merlin_209008674_b3fa58fa-9bb1-4cfe-a08a-40b4dda0de78-jumbo.jpg" alt="Burger">
+            <h3>Burger</h3>
+            <p>650 RSD</p>
+        </div>
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400" alt="Torta">
+            <h3>Čokoladna torta</h3>
+            <p>250 RSD</p>
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <h2>Galerija</h2>
+    <div class="gallery-grid">
+        <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400" alt="Kafić unutra">
+            <p>Kafić unutra</p>
+        </div>
+        <div class="gallery-card">
+            <img src="https://cafebarrestoran.rs/wp-content/uploads/2021/11/3-Baristro.jpg" alt="Veče u kaficu">
+            <p>Veče u kaficu</p>
+        </div>
+        <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400" alt="Kafa i atmosfera">
+            <p>Kafa i atmosfera</p>
+        </div>
+        <div class="gallery-card">
+            <img src="https://mega-media.hr/wp-content/uploads/2021/02/terasa.jpg" alt="Terasa">
+            <p>Terasa</p>
+        </div>
+    </div>
+</section>
+
+<!-- Modal za prikaz slike -->
+<div id="imgModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+  <div id="caption"></div>
+</div>
+
+<style>
+/* Modal stil */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+}
+
+#caption {
+  margin: 15px auto;
+  text-align: center;
+  color: #ccc;
+  font-size: 18px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #bbb;
+}
+</style>
+
+
+<section id="contact">
+    <h2>Kontakt</h2>
+    <p>Adresa: Ulica 123, Grad</p>
+    <p>Telefon: 060/123-4567</p>
+    <p>Email: info@uzitak.rs</p>
+    <p><a href="https://www.google.com/maps" target="_blank">Pogledajte na Google Maps</a></p>
+</section>
+
+<footer>
+    &copy; 2025 Kafić "Užitak". Pratite nas na
+    <a href="#" style="color:white;">Instagram</a> i
+    <a href="#" style="color:white;">Facebook</a>.
+</footer>
+
+<script>
+// Dohvati modal
+var modal = document.getElementById("imgModal");
+var modalImg = document.getElementById("modalImg");
+var captionText = document.getElementById("caption");
+
+// Sve slike iz galerije
+var imgs = document.querySelectorAll(".gallery-card img");
+
+imgs.forEach(function(img) {
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+});
+
+// Zatvaranje modala
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// Zatvori klikom van slike
+modal.onclick = function(e) {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+</body>
+</html>
